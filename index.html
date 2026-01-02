@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Your Name</title>
+    <style>
+        /* --- 포인트 컬러 설정 (이곳의 색상만 바꾸면 전체가 변합니다) --- */
+        :root {
+            --point-color: #2c3e50; /* 원하는 색상 코드로 변경하세요 */
+            --text-color: #333;
+            --light-gray: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* 상단 중앙 이름 */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            color: var(--point-color);
+            margin: 0;
+        }
+
+        /* 섹션 공통 스타일 */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--point-color);
+            display: inline-block;
+            margin-bottom: 25px;
+            color: var(--point-color);
+        }
+
+        /* About 섹션 (사진과 텍스트) */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--light-gray);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* 리스트 스타일 */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--point-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 논문/수상 강조 */
+        .item-title {
+            font-weight: bold;
+            display: block;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* 연락처 */
+        .contact-link {
+            color: var(--point-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .about-content { text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>홍길동 (Gildong Hong)</h1>
+        <p>Ph.D. Candidate in Computer Science</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="profile.jpg" alt="Profile" class="profile-img"> <div class="about-text">
+                안녕하세요. 저는 기술을 통해 세상을 이롭게 만들고자 하는 연구자 홍길동입니다. 
+                현재 OO대학교에서 데이터 사이언스를 연구하고 있으며, 복잡한 시스템의 효율성을 개선하는 데 관심이 많습니다.
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <span class="item-title">OO University, Seoul, Korea</span>
+                <span class="item-desc">Ph.D. in Computer Science (2021 - Present)</span>
+            </li>
+            <li>
+                <span class="item-title">XX University, Seoul, Korea</span>
+                <span class="item-desc">B.S. in Software Engineering (2015 - 2021)</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="interests">
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Artificial Intelligence & Machine Learning</li>
+            <li>Data Mining in Social Networks</li>
+            <li>Natural Language Processing</li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Selected Publication</h2>
+        <ul>
+            <li>
+                <span class="item-title">"Efficient Algorithm for Large Scale Data"</span>
+                <span class="item-desc">G. Hong, et al., <strong>IEEE Conference</strong>, 2023.</span>
+            </li>
+            <li>
+                <span class="item-title">"The Future of AI Ethics"</span>
+                <span class="item-desc">G. Hong, <strong>Journal of AI Research</strong>, 2022.</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="awards">
+        <h2>Award</h2>
+        <ul>
+            <li>Best Paper Award, Domestic AI Conference (2023)</li>
+            <li>National Graduate Fellowship (2021-2023)</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:email@example.com" class="contact-link">email@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/yourid" class="contact-link" target="_blank">github.com/yourid</a></p>
+    </section>
+</div>
+
+</body>
+</html>
