@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Your Name</title>
+    <title>Personal Page | Haeun Ji</title>
     <style>
-        /* --- 포인트 컬러 설정 (이곳의 색상만 바꾸면 전체가 변합니다) --- */
+        /* --- 포인트 컬러 설정 --- */
         :root {
-            --point-color: #2c3e50; /* 원하는 색상 코드로 변경하세요 */
+            --point-color: #2c3e50;
             --text-color: #333;
             --light-gray: #f9f9f9;
+            --accent-blue: #094886;
         }
 
         body {
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-            font-size: 14px; /* 18px에서 14px로 조정하여 70% 줌 효과 반영 */
+            font-size: 14px;
             line-height: 1.8;
             color: var(--text-color);
             background-color: #ffffff;
@@ -23,125 +24,160 @@
         }
 
         .container {
-            max-width: 700px; /* 800px에서 700px로 조정 */
+            max-width: 700px;
             margin: 0 auto;
-            padding: 40px 20px; /* 패딩 소폭 축소 */
+            padding: 40px 20px;
         }
 
-        /* 상단 중앙 이름 */
         header {
             text-align: center;
-            margin-bottom: 45px; /* 간격 조정 */
+            margin-bottom: 45px;
         }
 
         header h1 {
             font-size: 2.5rem;
-            /* 좌우 패딩을 50px 정도로 넉넉히 주면 밑줄이 글자보다 길어집니다 */
             padding: 0 50px 1px 50px; 
             display: inline-block;
             letter-spacing: -1px;
             margin: 0;
-            color: #094886; 
-                
-            /* 밑줄 두께 */
+            color: var(--accent-blue); 
             border-bottom: 3px solid; 
-                
-            /* 그라데이션 배분 조정: 0% 투명 -> 20%부터 색상 시작 -> 80%부터 다시 투명 */
             border-image: linear-gradient(
                 to right, 
                 rgba(9, 72, 134, 0) 0%, 
-                #094886 20%, 
-                #094886 80%, 
+                var(--accent-blue) 20%, 
+                var(--accent-blue) 80%, 
                 rgba(9, 72, 134, 0) 100%
             ) 1;
         }
 
-        /* 섹션 공통 스타일 */
-        section {
-            margin-bottom: 45px; /* 간격 조정 */
+        section { margin-bottom: 45px; }
+
+        h2 {
+            font-size: 1.15rem; 
+            display: block; 
+            color: #ffffff; 
+            padding: 3px 10px; 
+            background: linear-gradient(to right, var(--accent-blue), rgba(9, 72, 134, 0)); 
+            border-left: 8px solid var(--accent-blue); 
+            margin-bottom: 20px; 
+            border-radius: 4px 0 0 4px;
         }
 
-    h2 {
-        font-size: 1.15rem; 
-        display: block; 
-        color: #ffffff; /* 글자색 흰색 */
-        padding: 3px 10px; /* 배경에 맞춰 패딩 소폭 상향 */
-        
-        /* 좌측에서 우측으로 남색 그라데이션 적용 */
-        background: linear-gradient(to right, #094886, rgba(9, 72, 134, 0)); 
-        
-        border-left: 8px solid #094886; 
-        margin-bottom: 20px; 
-        border-radius: 4px 0 0 4px; /* 왼쪽만 살짝 둥글게 */
-    }
-
-        
-
-        /* About 섹션 (사진과 텍스트) */
         .about-content {
             display: flex;
             align-items: center;
-            gap: 25px; /* 간격 소폭 조정 */
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .profile-img {
-            width: 140px; /* 180px에서 비율 맞춰 축소 */
-            height: 187px; /* 240px에서 비율 맞춰 축소 */
+            width: 140px;
+            height: 187px;
             object-fit: cover;
             border: 3px solid var(--light-gray);
         }
 
-        .about-text {
-            flex: 1;
-            min-width: 250px; /* 최소 너비 조정 */
-        }
+        .about-text { flex: 1; min-width: 250px; }
 
-        /* 리스트 스타일 */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        ul { list-style: none; padding: 0; }
         li {
-            margin-bottom: 10px; /* 12px에서 조정 */
+            margin-bottom: 15px;
             position: relative;
-            padding-left: 18px; /* 패딩 조정 */
+            padding-left: 18px;
         }
-
         li::before {
             content: "•";
-            color: var(--point-color);
+            color: var(--accent-blue);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
-        /* 논문/수상 강조 */
-        .item-title {
-            font-weight: bold;
-            display: block;
+        .item-title { font-weight: bold; display: block; }
+        .item-desc { font-size: 0.85rem; color: #666; display: block; }
+
+        /* --- 이미지 호버 레이아웃 --- */
+        .hover-container {
+            position: relative;
+            display: inline-block;
         }
 
-        .item-desc {
-            font-size: 0.75rem; /* 1rem에서 조정 */
-            color: #444444;
+        .chip-trigger {
+            color: var(--accent-blue);
+            cursor: pointer;
+            border-bottom: 1px dashed var(--accent-blue);
+            transition: 0.2s;
         }
 
-        /* 연락처 */
-        .contact-link {
-            color: var(--point-color);
-            text-decoration: none;
-            font-weight: bold;
+        .chip-trigger:hover { background-color: #f0f4f8; }
+
+        /* 공통 툴팁 스타일 */
+        .chip-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: #fff;
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 15px;
+            z-index: 100;
+            transition: all 0.3s ease;
+            width: 500px; /* NCO 프로젝트의 넓은 레이아웃 대응 */
         }
 
-        .contact-link:hover {
-            text-decoration: underline;
+        /* NCO 전용: 상단 3:1 이미지 스타일 */
+        .chip-top-wide {
+            width: 100%;
+            margin-bottom: 12px;
         }
+        .chip-top-wide img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        /* 하단 3개 그리드 레이아웃 */
+        .chip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .chip-grid div { text-align: center; }
+        .chip-grid img { 
+            width: 100%; 
+            aspect-ratio: 1 / 1; 
+            object-fit: cover; 
+            border-radius: 4px; 
+            border: 1px solid #eee; 
+        }
+        
+        .caption { font-size: 10px; color: #888; margin-top: 5px; display: block; text-align: center; }
+
+        /* 단일 이미지 프로젝트용 스타일 */
+        .single-chip { width: 250px; }
+        .single-chip img { width: 100%; border-radius: 4px; }
+
+        .hover-container:hover .chip-tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: bold; }
+        .contact-link:hover { text-decoration: underline; }
 
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .about-content { text-align: center; justify-content: center; }
+            .chip-tooltip { width: 280px; }
+            .chip-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -153,20 +189,18 @@
     </header>
 
     <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-        <img src="images/haeun_1.jpg" alt="Profile" class="profile-img"> 
-        
-        <div class="about-text">
-            <ul>
-                <li>I am a <strong>Research Intern</strong> at the <strong>Autonomous Robot Intelligence Laboratory (ARIL), Seoul National University</strong>.</li>
-                
-                <li>My academic background is in <strong>Electronic Engineering</strong> (Kyung Hee University), where I specialized in <strong>Open-Source EDA-based Chip Design</strong>.</li>                
-                <li>My research focuses on <strong>Hardware Architecture for Autonomous Robotics and Space Exploration</strong>.</li>
-            </ul>
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="images/haeun_2.jpg" alt="Profile" class="profile-img"> 
+            <div class="about-text">
+                <ul>
+                    <li>I am a <strong>Research Intern</strong> at the <strong>Autonomous Robot Intelligence Laboratory (ARIL), Seoul National University</strong>.</li>
+                    <li>My academic background is in <strong>Electronic Engineering</strong>, with a primary focus on <strong>Chip Design using Open-Source EDA</strong>.</li>
+                    <li>My research interests lie in <strong>Hardware for Autonomous Robotics and Space Exploration</strong>.</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="education">
         <h2>Experience & Education</h2>
@@ -176,7 +210,7 @@
                 <span class="item-desc">Research Intern at the ARIL (2025 - Present)</span>
             </li>
             <li>
-                <span class="item-title"> Kyung Hee University, Yongin, Korea</span>
+                <span class="item-title">Kyung Hee University, Yongin, Korea</span>
                 <span class="item-desc">B.S. in Electronic Engineering (2019 - 2025)</span>
             </li>
         </ul>
@@ -185,44 +219,71 @@
     <section id="interests">
         <h2>Research Interests</h2>
         <ul>
-            <li>Hardware Architecture for Autonomous Robotics and Space Exploration</li>
+            <li>Hardware for Autonomous Robotics and Space Exploration</li>
             <li>Chip Design using Open-Source EDA</li>
         </ul>
     </section>
 
     <section id="awards">
-    <h2>Award</h2>
+        <h2>Award</h2>
         <ul>
             <li>
                 <span class="item-title">Grand Prize, Minister's Award (Deputy Prime Minister and Minister of Science and ICT)</span>
-                <span class="item-desc">
-                    2025 My Chip Competition, 12-bit CORDIC-based NCO
-                </span>
+                <span class="item-desc">2025 My Chip Competition, 12-bit CORDIC-based NCO</span>
             </li>
         </ul>
     </section>
 
     <section id="activities">
-        <h2>Academic & Extracurricular Activities</h2>
+        <h2>Extracurricular Activities</h2>
         <ul>
             <li>
-                <span class="item-title">Chip Design Project #3: 12-bit CORDIC-based NCO (2025 1st My Chip Service)</span>
+                <div class="hover-container">
+                    <span class="item-title chip-trigger">Chip Design Project #3: 12-bit CORDIC-based NCO (2025 1st My Chip Service)</span>
+                    <div class="chip-tooltip">
+                        <div class="chip-top-wide">
+                            <img src="images/nco_wide.jpg" alt="NCO Full Layout">
+                            <span class="caption">12-bit CORDIC-based NCO System PCB</span>
+                        </div>
+                        <div class="chip-grid">
+                            <div><img src="images/layout1.png" alt="Layout 1"><span class="caption">Sub1: Phase Accumulator</span></div>
+                            <div><img src="images/layout2.png" alt="Layout 2"><span class="caption">Sub2: CORDIC Element</span></div>
+                            <div><img src="images/layout3.png" alt="Layout 3"><span class="caption">Sub3: Output Terminal</span></div>
+                        </div>
+                    </div>
+                </div>
                 <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service.</span>
             </li>
+
             <li>
-                <span class="item-title">Chip Design Project #2: 8-bit FIR Processing Element (2024 2nd My Chip Service)</span>
+                <div class="hover-container">
+                    <span class="item-title chip-trigger">Chip Design Project #2: 8-bit FIR Processing Element (2024 2nd My Chip Service)</span>
+                    <div class="chip-tooltip single-chip">
+                        <img src="images/fir_layout.png" alt="FIR Layout">
+                        <span class="caption">FIR Processing Element</span>
+                    </div>
+                </div>
                 <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service.</span>
             </li>
+
             <li>
                 <span class="item-title">Panelist: 2024 Presidential Town Hall Meeting</span>
-                <span class="item-desc">Selected as a student representative to provide feedback on the "My Chip Service."</span>
+                <span class="item-desc">Selected as a student representative to provide feedback on the "My Chip Service".</span>
             </li>
+
             <li>
                 <span class="item-title">Presenter: 2024 IEIE Summer Conference</span>
-                <span class="item-desc">Presented "ETRI 0.5㎛ Process-based 4-bit Booth's Multiplier Design and Chip Test."</span>
+                <span class="item-desc">Presented "ETRI 0.5㎛ Process-based 4-bit Booth's Multiplier Design and Chip Test".</span>
             </li>
+
             <li>
-                <span class="item-title">Chip Design Project #1: 4-bit Booth's Multiplier (2023 1st My Chip Service)</span>
+                <div class="hover-container">
+                    <span class="item-title chip-trigger">Chip Design Project #1: 4-bit Booth's Multiplier (2023 1st My Chip Service)</span>
+                    <div class="chip-tooltip single-chip">
+                        <img src="images/booth_layout.png" alt="Booth Layout">
+                        <span class="caption">Booth's Multiplier</span>
+                    </div>
+                </div>
                 <span class="item-desc">Open-Source EDA-based design, taped out via the My Chip Service.</span>
             </li>
         </ul>
