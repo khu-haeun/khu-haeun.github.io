@@ -14,6 +14,7 @@
 
         body {
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            font-size: 18px;
             line-height: 1.8;
             color: var(--text-color);
             background-color: #ffffff;
@@ -30,14 +31,28 @@
         /* 상단 중앙 이름 */
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
+        /* header h1 {
+            font-size: 3rem;
+            padding-bottom: 3px;
+            border-bottom: 2px solid var(--point-color);
+            display: inline-block;
+            color: #094886;
             letter-spacing: -1px;
             color: var(--point-color);
             margin: 0;
+        } */
+
+        header h1 {
+            font-size: 3.2rem;
+            padding-bottom: 3px;
+            border-bottom: 5px solid #094886; /* 아래 강조 선 색상도 통일 */
+            display: inline-block;
+            letter-spacing: -1px;
+            margin: 0;
+            color: #094886; /* 선택하신 블루 색상 적용 */
         }
 
         /* 섹션 공통 스타일 */
@@ -47,10 +62,11 @@
 
         h2 {
             font-size: 1.5rem;
-            border-bottom: 2px solid var(--point-color);
-            display: inline-block;
-            margin-bottom: 25px;
-            color: var(--point-color);
+            display: block; 
+            color: #094886;           /* 짙은 파란색 글자 (Navy Blue) */
+            padding: 2px 20px;
+            border-left: 8px solid #094886; /* 왼쪽 선도 글자색과 맞춰서 강조 */
+            margin-bottom: 30px;
         }
 
         /* About 섹션 (사진과 텍스트) */
@@ -62,7 +78,7 @@
         }
 
         .profile-img {
-            width: 180px;
+            width: 240px;
             height: 180px;
             /*border-radius: 50%;*/
             object-fit: cover;
@@ -102,7 +118,7 @@
 
         .item-desc {
             font-size: 0.95rem;
-            color: #666;
+            color: #444444;
         }
 
         /* 연락처 */
@@ -126,30 +142,36 @@
 
 <div class="container">
     <header>
-        <h1>홍길동 (Gildong Hong)</h1>
-        <p>Ph.D. Candidate in Computer Science</p>
+        <h1>Haeun Ji</h1>
+        <!-- <p>Ph.D. Candidate in Computer Science</p> -->
     </header>
 
     <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="images/haeun.jpg" alt="Profile" class="profile-img"> <div class="about-text">
-                안녕하세요. 저는 기술을 통해 세상을 이롭게 만들고자 하는 연구자 홍길동입니다. 
-                현재 OO대학교에서 데이터 사이언스를 연구하고 있으며, 복잡한 시스템의 효율성을 개선하는 데 관심이 많습니다.
-            </div>
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="images/haeun.jpg" alt="Profile" class="profile-img"> 
+        
+        <div class="about-text">
+            <ul>
+                <li>I am a research intern at the <strong>Autonomous Robot Intelligence Laboratory (ARIL), Seoul National University</strong>.</li>
+                
+                <li>My academic background is in <strong>Electronic Engineering</strong> (Kyung Hee University), where I specialized in <strong>Open-Source EDA-based Chip Design</strong>.</li>                
+                <li>My research focuses on <strong>Hardware Architecture for Autonomous Robotics and Space Exploration</strong>.</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="education">
-        <h2>Education</h2>
+        <h2>Experience & Education</h2>
         <ul>
             <li>
-                <span class="item-title">OO University, Seoul, Korea</span>
-                <span class="item-desc">Ph.D. in Computer Science (2021 - Present)</span>
+                <span class="item-title">Seoul National University, Seoul, Korea</span>
+                <span class="item-desc">ARIL Intern (2025 - Present)</span>
             </li>
             <li>
-                <span class="item-title">XX University, Seoul, Korea</span>
-                <span class="item-desc">B.S. in Software Engineering (2015 - 2021)</span>
+                <span class="item-title"> Kyung Hee University, Yongin, Korea</span>
+                <span class="item-desc">B.S. in Electronic Engineering (2019 - 2025)</span>
             </li>
         </ul>
     </section>
@@ -157,13 +179,12 @@
     <section id="interests">
         <h2>Research Interests</h2>
         <ul>
-            <li>Artificial Intelligence & Machine Learning</li>
-            <li>Data Mining in Social Networks</li>
-            <li>Natural Language Processing</li>
+            <li>Hardware Architecture for Autonomous Robotics and Space Exploration</li>
+            <li>Chip Design using Open-Source EDA</li>
         </ul>
     </section>
 
-    <section id="publications">
+    <!-- <section id="publications">
         <h2>Selected Publication</h2>
         <ul>
             <li>
@@ -175,20 +196,43 @@
                 <span class="item-desc">G. Hong, <strong>Journal of AI Research</strong>, 2022.</span>
             </li>
         </ul>
-    </section>
+    </section> -->
 
     <section id="awards">
-        <h2>Award</h2>
+    <h2>Award</h2>
         <ul>
-            <li>Best Paper Award, Domestic AI Conference (2023)</li>
-            <li>National Graduate Fellowship (2021-2023)</li>
+            <li>
+                <span class="item-title">Grand Prize, Minister's Award (Deputy Prime Minister and Minister of Science and ICT)</span>
+                <span class="item-desc">
+                    2025 My Chip Competition, 12-bit CORDIC-based NCO
+                </span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="activities">
+        <h2>Academic & Extracurricular Activities</h2>
+        <ul>
+            <li>
+                <span class="item-title">Chip Design - 2023 1st My Chip Service</span>
+                <span class="item-desc">4-bit Booth's Multiplier </span>
+            </li>
+            <li>
+                <span class="item-title">Chip Design - 2024 2nd My Chip Service</span>
+                <span class="item-desc">8-bit FIR Processing Element</span>
+            </li>
+            <li>
+                <span class="item-title">Chip Design - 2025 1st My Chip Service</span>
+                <span class="item-desc">12-bit CORDIC-based NCO</span>
+            </li>
         </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:email@example.com" class="contact-link">email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourid" class="contact-link" target="_blank">github.com/yourid</a></p>
+        <p>Email: <a href="mailto:eunhajosu@khu.ac.kr" class="contact-link">eunhajosu@khu.ac.kr</a></p>
+        <p>GitHub: <a href="https://github.com/khu-haeun" class="contact-link" target="_blank">github.com/khu-haeun</a></p>
+        <p>Blog: <a href="https://dream-ee-master.tistory.com" class="contact-link" target="_blank">dream-ee-master.tistory.com</a></p>
     </section>
 </div>
 
