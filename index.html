@@ -54,15 +54,26 @@
         section { margin-bottom: 45px; }
 
         h2 {
-            font-size: 1.15rem; 
-            display: block; 
-            color: #ffffff; 
-            padding: 3px 10px; 
-            background: linear-gradient(to right, var(--accent-blue), rgba(9, 72, 134, 0)); 
-            border-left: 8px solid var(--accent-blue); 
-            margin-bottom: 20px; 
-            border-radius: 4px 0 0 4px;
-        }
+    font-size: 1.15rem; 
+    display: block; 
+    color: #ffffff; 
+    padding: 3px 10px; 
+    /* 0% ~ 80% 까지는 진한 파란색을 꽉 채우고, 
+       80% 이후부터 100% 사이에서만 아주 부드럽게 사라지게 설정 
+    */
+    background: linear-gradient(to right, 
+        var(--accent-blue) 0%, 
+        var(--accent-blue) 5%, 
+        rgba(9, 72, 134, 0) 120%
+    ); 
+    border-left: 8px solid var(--accent-blue); 
+    margin-bottom: 20px; 
+    border-radius: 4px 4px 4px 4px;
+    
+    /* 혹시 박스 너비 자체가 좁게 느껴진다면 아래 속성을 추가해보세요 */
+    width: 100%; 
+    box-sizing: border-box;
+}
 
         .about-content {
             display: flex;
