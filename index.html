@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-            font-size: 18px;
+            font-size: 14px; /* 18px에서 14px로 조정하여 70% 줌 효과 반영 */
             line-height: 1.8;
             color: var(--text-color);
             background-color: #ffffff;
@@ -23,71 +23,78 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 700px; /* 800px에서 700px로 조정 */
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px; /* 패딩 소폭 축소 */
         }
 
         /* 상단 중앙 이름 */
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 45px; /* 간격 조정 */
         }
 
-        /* header h1 {
-            font-size: 3rem;
-            padding-bottom: 3px;
-            border-bottom: 2px solid var(--point-color);
-            display: inline-block;
-            color: #094886;
-            letter-spacing: -1px;
-            color: var(--point-color);
-            margin: 0;
-        } */
-
         header h1 {
-            font-size: 3.2rem;
-            padding-bottom: 3px;
-            border-bottom: 5px solid #094886; /* 아래 강조 선 색상도 통일 */
+            font-size: 2.5rem;
+            /* 좌우 패딩을 50px 정도로 넉넉히 주면 밑줄이 글자보다 길어집니다 */
+            padding: 0 50px 1px 50px; 
             display: inline-block;
             letter-spacing: -1px;
             margin: 0;
-            color: #094886; /* 선택하신 블루 색상 적용 */
+            color: #094886; 
+                
+            /* 밑줄 두께 */
+            border-bottom: 3px solid; 
+                
+            /* 그라데이션 배분 조정: 0% 투명 -> 20%부터 색상 시작 -> 80%부터 다시 투명 */
+            border-image: linear-gradient(
+                to right, 
+                rgba(9, 72, 134, 0) 0%, 
+                #094886 20%, 
+                #094886 80%, 
+                rgba(9, 72, 134, 0) 100%
+            ) 1;
         }
 
         /* 섹션 공통 스타일 */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 45px; /* 간격 조정 */
         }
 
-        h2 {
-            font-size: 1.5rem;
-            display: block; 
-            color: #094886;           /* 짙은 파란색 글자 (Navy Blue) */
-            padding: 2px 20px;
-            border-left: 8px solid #094886; /* 왼쪽 선도 글자색과 맞춰서 강조 */
-            margin-bottom: 30px;
-        }
+    h2 {
+        font-size: 1.15rem; 
+        display: block; 
+        color: #ffffff; /* 글자색 흰색 */
+        padding: 3px 10px; /* 배경에 맞춰 패딩 소폭 상향 */
+        
+        /* 좌측에서 우측으로 남색 그라데이션 적용 */
+        background: linear-gradient(to right, #094886, rgba(9, 72, 134, 0)); 
+        
+        border-left: 8px solid #094886; 
+        margin-bottom: 20px; 
+        border-radius: 4px 0 0 4px; /* 왼쪽만 살짝 둥글게 */
+    }
+
+        
 
         /* About 섹션 (사진과 텍스트) */
         .about-content {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 25px; /* 간격 소폭 조정 */
             flex-wrap: wrap;
         }
 
         .profile-img {
-            width: 180px;
-            height: 240px;
-            /*border-radius: 50%;*/
+            width: 140px; /* 180px에서 비율 맞춰 축소 */
+            height: 187px; /* 240px에서 비율 맞춰 축소 */
             object-fit: cover;
             border: 3px solid var(--light-gray);
         }
 
         .about-text {
             flex: 1;
-            min-width: 300px;
+            min-width: 250px; /* 최소 너비 조정 */
         }
 
         /* 리스트 스타일 */
@@ -97,9 +104,9 @@
         }
 
         li {
-            margin-bottom: 12px;
+            margin-bottom: 10px; /* 12px에서 조정 */
             position: relative;
-            padding-left: 20px;
+            padding-left: 18px; /* 패딩 조정 */
         }
 
         li::before {
@@ -117,7 +124,7 @@
         }
 
         .item-desc {
-            font-size: 1 rem;
+            font-size: 0.75rem; /* 1rem에서 조정 */
             color: #444444;
         }
 
@@ -133,7 +140,7 @@
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
+            header h1 { font-size: 1.8rem; }
             .about-content { text-align: center; justify-content: center; }
         }
     </style>
@@ -143,7 +150,6 @@
 <div class="container">
     <header>
         <h1>Haeun Ji</h1>
-        <!-- <p>Ph.D. Candidate in Computer Science</p> -->
     </header>
 
     <section id="about">
@@ -184,20 +190,6 @@
         </ul>
     </section>
 
-    <!-- <section id="publications">
-        <h2>Selected Publication</h2>
-        <ul>
-            <li>
-                <span class="item-title">"Efficient Algorithm for Large Scale Data"</span>
-                <span class="item-desc">G. Hong, et al., <strong>IEEE Conference</strong>, 2023.</span>
-            </li>
-            <li>
-                <span class="item-title">"The Future of AI Ethics"</span>
-                <span class="item-desc">G. Hong, <strong>Journal of AI Research</strong>, 2022.</span>
-            </li>
-        </ul>
-    </section> -->
-
     <section id="awards">
     <h2>Award</h2>
         <ul>
@@ -209,32 +201,6 @@
             </li>
         </ul>
     </section>
-
-<!-- <section id="activities">
-    <h2>Academic & Extracurricular Activities</h2>
-        <ul>
-            <li>
-                <span class="item-title">Chip Design Project #3 : 12-bit CORDIC-based NCO</span>
-                <span class="item-desc">Designed a 12-bit CORDIC-based NCO</span>
-            </li>
-            <li>
-                <span class="item-title">Chip Design Project #2 : 8-bit FIR Processing Element2024 2nd My Chip Service</span>
-                <span class="item-desc">Designed an 8-bit FIR Processing Element</span>
-            </li>
-            <li>
-                <span class="item-title">Panelist : 2024 Presidential Town Hall Meeting</span>
-                <span class="item-desc">Selected as a student representative to provide feedback on the "My Chip Service"</span>
-            </li>
-            <li>
-                <span class="item-title">Presenter : 2024 IEIE Summer Conference</span>
-                <span class="item-desc">Presented "ETRI 0.5㎛ Process-based 4-bit Booth's Multiplier Design and Chip Test"</span>
-            </li>
-            <li>
-                <span class="item-title">Chip Design Project #1 : 4-bit Booth's Multiplier 2023 1st My Chip Service</span>
-                <span class="item-desc">Designed a 4-bit Booth's Multiplier</span>
-            </li>
-        </ul>
-    </section> -->
 
     <section id="activities">
         <h2>Academic & Extracurricular Activities</h2>
@@ -264,9 +230,11 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:eunhajosu@khu.ac.kr" class="contact-link">eunhajosu@khu.ac.kr</a></p>
-        <p>GitHub: <a href="https://github.com/khu-haeun" class="contact-link" target="_blank">github.com/khu-haeun</a></p>
-        <p>Blog: <a href="https://dream-ee-master.tistory.com" class="contact-link" target="_blank">dream-ee-master.tistory.com</a></p>
+        <ul>
+            <li>Email: <a href="mailto:eunhajosu@khu.ac.kr" class="contact-link">eunhajosu@khu.ac.kr</a></li>
+            <li>GitHub: <a href="https://github.com/khu-haeun" class="contact-link" target="_blank">github.com/khu-haeun</a></li>
+            <li>Blog: <a href="https://dream-ee-master.tistory.com" class="contact-link" target="_blank">dream-ee-master.tistory.com</a></li>
+        </ul>
     </section>
 </div>
 
